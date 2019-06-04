@@ -38,7 +38,7 @@ namespace System.Data.OleDb.Tests
                 }
                 // skip if x86 or if both drivers available 
                 shouldSkip |= PlatformDetection.Is32BitProcess;
-                IsAvailable = !shouldSkip && providerNames.Contains(s_expectedProviderName);
+                IsAvailable = false; // ActiveIssue #37823 // !shouldSkip && providerNames.Contains(s_expectedProviderName);
                 ProviderName = IsAvailable ? s_expectedProviderName : null;
             }
         }
